@@ -54,16 +54,16 @@
                 aria-describedby="button-addon1">
           </div>
         <!--UTENTI-->
-          <div class="utente conteiner d-flex flex-row align-items-center">
+          <div class="utente conteiner d-flex flex-row align-items-center" v-for="(text,avatar) in contacts">
             <div>
             <img src="/img/avatar_1.jpg" alt="">
             </div>
             <div>
-                <h3>Michele</h3>
+                <h3>{{ text.name }}</h3>
                 <p>Ultimo messaggio inviato</p>
             </div>
           </div>
-          <div class="utente conteiner d-flex flex-row align-items-center">
+          <!--<div class="utente conteiner d-flex flex-row align-items-center">
             <div>
                 <img src="/img/avatar_2.jpg" alt="">
             </div>
@@ -125,7 +125,7 @@
                 <h3>Davide</h3>
                 <p>Ultimo messaggio inviato</p>
             </div>
-           </div>
+           </div>-->
         </div>
         <div class="leftsec col-8">
             <nav class="navbar bg-light">
