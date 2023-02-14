@@ -1,0 +1,16 @@
+.utente{
+    border-bottom: 0.5px solid lightgray;
+}
+
+.utente img{
+    width:40px;
+    border-radius:20px;
+}
+
+.utente h1{
+    font-size: 10px;
+}
+
+.utente p{
+    font-size:10px;
+}
