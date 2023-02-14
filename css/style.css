@@ -14,3 +14,29 @@
 .utente p{
     font-size:10px;
 }
+
+.messagespace{
+    background-image: url(/img/mine.jpg);
+    height:84%;
+}
+
+.messagesend{
+    background-color: greenyellow;
+    padding:10px;
+    width:300px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    
+   
+    
+}
+
+.messagerecived{
+    background-color: white;
+    padding: 10px;
+    width:300px;
+    margin-bottom:20px;
+    margin-left:20px;
+}
