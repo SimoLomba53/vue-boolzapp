@@ -165,8 +165,12 @@
                           status: 'received'
                       }
                   ],
+                  secmessage: 0,
               }
+                
           ]
+           
       }
+         
     }
   }).mount('#app')

@@ -153,18 +153,13 @@
             </nav>
             <div class="messagespace conteiner gap-3 ">
                 <div class="d-flex justify-content-end flex-column">
-                <div v-for="item in contacts">
-                   <div v-for="message in item.messages" :class="(message.status == 'sent')? 'messagesend':'messagerecived'">
-                    {{message.message}}</div>
+                
+                    <div v-for="message in contacts[0].messages" :class="(message.status == 'sent')? 'messagesend':'messagerecived' ">{{ message.message }}</div>
+                
+                    <div v-for="item in contacts">
+                   <!--<div v-for="message in contacts[0].messages" :class="(message.status == 'sent')? 'messagesend':'messagerecived'">
+                    {{message.message}}</div>-->
                 </div>
-                <!--<div class="messagesend">
-                   <p>Ricordati di stendere i panni</p>
-                </div>
-                </div>
-
-                <div class="messagerecived">
-                   <p>Tutto fatto!</p>
-                </div>-->
                 </div>
             </div>
             
