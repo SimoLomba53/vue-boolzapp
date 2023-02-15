@@ -173,7 +173,10 @@ createApp({
 
   methods: {
     switchContact(contactIndex) {
-      activeContact = contacts[contactIndex];
+      activeContact = [contactIndex];
+      const contactmessage = [];
+      console.log(contactmessage);
+      contactIndex = contactmessage;
     },
 
     //addMess() {
