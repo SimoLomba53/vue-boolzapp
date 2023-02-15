@@ -55,7 +55,7 @@
           </div>
         <!--UTENTI-->
           <div class="userbar">
-          <div class="utente conteiner d-flex flex-row align-items-center" v-for="(text,avatar) in contacts">
+          <div class="utente conteiner d-flex flex-row align-items-center" v-for="(text,avatar) in contacts" @click="switchText">
             <div>
             <img :src=" 'img/avatar' + text.avatar + '.jpg'" alt="">
             </div>
@@ -168,8 +168,15 @@
                     <i class="fa-regular fa-face-smile"></i>
                 </div>
                 <div class="input-group mb-3 d-flex align-items-center justify-content-center mt-3">
-                    <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Username"
-                        aria-describedby="basic-addon1">
+                    <input 
+                      v-model="newmess" 
+                      @keyUp.enter="addMess()"
+                      v-model="newmess.mess" 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Scrivi un messaggio" 
+                      aria-label="Username"
+                      aria-describedby="basic-addon1">
                 </div>
                 <div class="d-flex align-items-center justify-content-center p-4">
                     <i class="fa-solid fa-microphone"></i>

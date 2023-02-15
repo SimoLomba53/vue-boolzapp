@@ -165,12 +165,41 @@
                           status: 'received'
                       }
                   ],
-                  secmessage: 0,
+                  activemessage: 0,
+
+                  newmess:"",
+                  newmess: {
+                      mess: "",
+                  },
+                   
               }
                 
           ]
            
       }
          
-    }
+    },
+
+      methods: {
+          switchText(activemessage) {
+             message in contacts[0].messages==activemessage;
+          },
+
+            
+        addMess() {
+            console.log(this.newmess);
+
+            const newmess = {
+                title: this.newmess.mess,
+            }
+
+                this.texts.push(this.newmess);
+              },
+
+            
+
+      }
+
+
+
   }).mount('#app')
