@@ -1,5 +1,14 @@
+.maincont{
+    max-height: 100vh;
+}
+
+.userbar{
+    overflow: auto;
+}
+
 .utente{
     border-bottom: 0.5px solid lightgray;
+    
 }
 
 .utente img{
@@ -15,9 +24,14 @@
     font-size:10px;
 }
 
+.rightbar p{
+   font-size: 10px;
+}
+
 .messagespace{
     background-image: url(/img/mine.jpg);
-    height:84%;
+    height:100%;
+    overflow: auto;
 }
 
 .messagesend{

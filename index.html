@@ -20,7 +20,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div id="app" class="col-10 offset-1 d-flex flex-row">
+    <div id="app" class="maincont col-10 offset-1 d-flex flex-row">
         <div class="col-4">
         <!--NAVBAR SSINISTRA INIZIALE-->
           <nav class="navbar bg-light">
@@ -54,14 +54,16 @@
                 aria-describedby="button-addon1">
           </div>
         <!--UTENTI-->
+          <div class="userbar">
           <div class="utente conteiner d-flex flex-row align-items-center" v-for="(text,avatar) in contacts">
             <div>
-            <img :src="/img/avatar{{ text.avatar }}.jpg" alt="">
+            <img :src=" 'img/avatar' + text.avatar + '.jpg'" alt="">
             </div>
             <div>
                 <h3>{{ text.name }}</h3>
                 <p>Ultimo messaggio inviato</p>
             </div>
+          </div>
           </div>
           <!--<div class="utente conteiner d-flex flex-row align-items-center">
             <div>
@@ -127,8 +129,8 @@
             </div>
            </div>-->
         </div>
-        <div class="leftsec col-8">
-            <nav class="navbar bg-light">
+        <div class="rightsec col-8">
+            <nav class="navbar rightbar  bg-light">
             <div class="container d-flex justify-content-between">
                 <div class="d-flex flex-row">
                     <div>
@@ -162,20 +164,22 @@
                 <div class="messagerecived">
                    <p>Tutto fatto!</p>
                 </div>-->
-
+                </div>
             </div>
+            
             <div class="writemessage conteiner d-flex flex-row justify-content-between">
                 <div class="d-flex align-items-center justify-content-center p-4">
-                <i class="fa-regular fa-face-smile"></i>
+                    <i class="fa-regular fa-face-smile"></i>
                 </div>
                 <div class="input-group mb-3 d-flex align-items-center justify-content-center mt-3">
                     <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Username"
                         aria-describedby="basic-addon1">
                 </div>
                 <div class="d-flex align-items-center justify-content-center p-4">
-                <i class="fa-solid fa-microphone"></i>
+                    <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
+            
         </div>
     </div>
 </body>
