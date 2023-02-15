@@ -1,71 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css" />
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <script type="text/javascript" src="/js/main.js" defer></script>
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <div id="app" class="maincont col-10 offset-1 d-flex flex-row">
-        <div class="col-4">
+      <div class="col-4">
         <!--NAVBAR SSINISTRA INIZIALE-->
-          <nav class="navbar bg-light">
-            <div class="container d-flex justify-content-between">
-                <div class="d-flex flex-row">
-                <div>
+        <nav class="navbar bg-light">
+          <div class="container d-flex justify-content-between">
+            <div class="d-flex flex-row">
+              <div>
                 <a class="navbar-brand" href="#">
-                    <img src="img/avatar_io.jpg" alt="Bootstrap" width="30" height="24">
+                  <img
+                    src="img/avatar_io.jpg"
+                    alt="Bootstrap"
+                    width="30"
+                    height="24"
+                  />
                 </a>
-                </div>
-                <div>
+              </div>
+              <div>
                 <h4>Sofia</h4>
-                </div>
-                </div>
-                <div>
-                    <i class="fa-solid fa-circle-notch"></i>
-                    <i class="fa-solid fa-message"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
+              </div>
             </div>
-          </nav>
+            <div>
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+        </nav>
         <!--ATTIVA NOTIFICHE DESKTOP-->
-          <div class="conteiner bg-primary">
-            <h3>Ricevi notifiche di nuovi pessaggi</h3>
-            <p>Attiva notifiche desktop</p>
-          </div>
+        <div class="conteiner bg-primary">
+          <h3>Ricevi notifiche di nuovi pessaggi</h3>
+          <p>Attiva notifiche desktop</p>
+        </div>
         <!--BARRA DI RICERCA CHAT-->
-          <div class="input-group mb-3">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
-                aria-describedby="button-addon1">
-          </div>
+        <div class="input-group mb-3">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon1"
+          >
+            Button
+          </button>
+          <input
+            type="text"
+            class="form-control"
+            placeholder=""
+            aria-label="Example text with button addon"
+            aria-describedby="button-addon1"
+          />
+        </div>
         <!--UTENTI-->
-          <div class="userbar">
-          <div class="utente conteiner d-flex flex-row align-items-center" v-for="(text,avatar) in contacts" @click="switchText">
+        <div class="userbar">
+          <div
+            class="utente conteiner d-flex flex-row align-items-center"
+            v-for="(contact, index) in contacts"
+            @click="switchContact(index)"
+          >
             <div>
-            <img :src=" 'img/avatar' + text.avatar + '.jpg'" alt="">
+              <img :src=" 'img/avatar' + contact.avatar + '.jpg'" alt="" />
             </div>
             <div>
-                <h3>{{ text.name }}</h3>
-                <p>Ultimo messaggio inviato</p>
+              <h3>{{ contact.name }}</h3>
+              <p>Ultimo messaggio inviato</p>
             </div>
           </div>
-          </div>
-          <!--<div class="utente conteiner d-flex flex-row align-items-center">
+        </div>
+        <!--<div class="utente conteiner d-flex flex-row align-items-center">
             <div>
                 <img src="/img/avatar_2.jpg" alt="">
             </div>
@@ -128,62 +156,75 @@
                 <p>Ultimo messaggio inviato</p>
             </div>
            </div>-->
-        </div>
-        <!--COLONNA DESTRA-->
-        <div class="rightsec col-8">
-            <nav class="navbar rightbar  bg-light">
-            <div class="container d-flex justify-content-between">
-                <div class="d-flex flex-row">
-                    <div>
-                        <a class="navbar-brand" href="#">
-                            <img src="img/avatar_1.jpg" alt="Bootstrap" width="30" height="24">
-                        </a>
-                    </div>
-                    <div>
-                        <h4>Michele</h4>
-                        <p>Ultimo accesso</p>
-                    </div>
-                </div>
-                <div>
-                    <i class="fa-solid fa-circle-notch"></i>
-                    <i class="fa-solid fa-message"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
+      </div>
+      <!--COLONNA DESTRA-->
+      <div class="rightsec col-8">
+        <nav class="navbar rightbar bg-light">
+          <div class="container d-flex justify-content-between">
+            <div class="d-flex flex-row">
+              <div>
+                <a class="navbar-brand" href="#">
+                  <img
+                    src="img/avatar_1.jpg"
+                    alt="Bootstrap"
+                    width="30"
+                    height="24"
+                  />
+                </a>
+              </div>
+              <div>
+                <h4>Michele</h4>
+                <p>Ultimo accesso</p>
+              </div>
             </div>
-            </nav>
-            <div class="messagespace conteiner gap-3 ">
-                <div class="d-flex justify-content-end flex-column">
-                
-                    <div v-for="message in contacts[0].messages" :class="(message.status == 'sent')? 'messagesend':'messagerecived' ">{{ message.message }}</div>
-                
-                    <div v-for="item in contacts">
-                   <!--<div v-for="message in contacts[0].messages" :class="(message.status == 'sent')? 'messagesend':'messagerecived'">
+            <div>
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+        </nav>
+        <div class="messagespace conteiner gap-3">
+          <div class="d-flex justify-content-end flex-column">
+            <div
+              v-for="message in contacts[0].messages"
+              :class="(message.status == 'sent')? 'messagesend':'messagerecived' "
+            >
+              {{ message.message }}
+            </div>
+
+            <div v-for="item in contacts">
+              <!--<div v-for="message in contacts[0].messages" :class="(message.status == 'sent')? 'messagesend':'messagerecived'">
                     {{message.message}}</div>-->
-                </div>
-                </div>
             </div>
-            
-            <div class="writemessage conteiner d-flex flex-row justify-content-between">
-                <div class="d-flex align-items-center justify-content-center p-4">
-                    <i class="fa-regular fa-face-smile"></i>
-                </div>
-                <div class="input-group mb-3 d-flex align-items-center justify-content-center mt-3">
-                    <input 
-                      v-model="newmess" 
-                      @keyUp.enter="addMess()"
-                      v-model="newmess.mess" 
-                      type="text" 
-                      class="form-control" 
-                      placeholder="Scrivi un messaggio" 
-                      aria-label="Username"
-                      aria-describedby="basic-addon1">
-                </div>
-                <div class="d-flex align-items-center justify-content-center p-4">
-                    <i class="fa-solid fa-microphone"></i>
-                </div>
-            </div>
-            
+          </div>
         </div>
+
+        <div
+          class="writemessage conteiner d-flex flex-row justify-content-between"
+        >
+          <div class="d-flex align-items-center justify-content-center p-4">
+            <i class="fa-regular fa-face-smile"></i>
+          </div>
+          <div
+            class="input-group mb-3 d-flex align-items-center justify-content-center mt-3"
+          >
+            <input
+              v-model="newmess"
+              @keyUp.enter="addMess()"
+              v-model="newmess.mess"
+              type="text"
+              class="form-control"
+              placeholder="Scrivi un messaggio"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="d-flex align-items-center justify-content-center p-4">
+            <i class="fa-solid fa-microphone"></i>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
