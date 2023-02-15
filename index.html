@@ -56,7 +56,7 @@
         <!--UTENTI-->
           <div class="utente conteiner d-flex flex-row align-items-center" v-for="(text,avatar) in contacts">
             <div>
-            <img src="/img/avatar_1.jpg" alt="">
+            <img :src="/img/avatar{{ text.avatar }}.jpg" alt="">
             </div>
             <div>
                 <h3>{{ text.name }}</h3>
