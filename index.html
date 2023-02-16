@@ -70,10 +70,13 @@
             Button
           </button>
           <input
+            v-model="search"
+            @keyUp.enter="filteredname"
             type="text"
             class="form-control"
             placeholder=""
-            aria-label="Example text with button addon"
+            aria-label="Example
+          text with button addon"
             aria-describedby="button-addon1"
           />
         </div>
@@ -84,6 +87,8 @@
             v-for="(contact, contactIndex) in contacts"
             @click="activeContact=contactIndex"
             :class="contactIndex == activeContact ? 'active': ''"
+            v-for="contact in filteredname"
+            :key="contact.name"
           >
             <div>
               <img :src=" 'img/avatar' + contact.avatar + '.jpg'" alt="" />

@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      search: "",
       contacts: [
         {
           name: "Michele",
@@ -186,6 +187,14 @@ createApp({
           status: "received",
         });
       }, 1000);
+    },
+  },
+
+  computed: {
+    filteredname() {
+      return this.contacts.filter((contact) =>
+        contact.name.includes(this.search)
+      );
     },
   },
 }).mount("#app");
