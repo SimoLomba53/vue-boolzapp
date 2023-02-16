@@ -179,16 +179,13 @@ createApp({
       this.contacts[this.activeContact].messages.push({
         ...this.newmess,
       });
-    },
 
-    setInterval() {
-      this.contacts[this.activeContact].messages.push(
-        {
+      setTimeout(() => {
+        this.contacts[this.activeContact].messages.push({
           message: "ok",
           status: "received",
-        },
-        1000
-      );
+        });
+      }, 1000);
     },
   },
 }).mount("#app");
