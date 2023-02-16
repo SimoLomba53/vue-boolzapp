@@ -81,15 +81,18 @@
         <div class="userbar">
           <div
             class="utente conteiner d-flex flex-row align-items-center"
-            v-for="(contact, index) in contacts"
-            @click="switchContact(index)"
+            v-for="(contact, contactIndex) in contacts"
+            @click="activeContact=contactIndex"
+            :class="contactIndex == activeContact ? 'active': ''"
           >
             <div>
               <img :src=" 'img/avatar' + contact.avatar + '.jpg'" alt="" />
             </div>
             <div>
               <h3>{{ contact.name }}</h3>
-              <p>Ultimo messaggio inviato</p>
+              <p v-if="contact.messages.length">
+                {{ contact.messages[contact.messages.length -1 ].message }}
+              </p>
             </div>
           </div>
         </div>
@@ -165,8 +168,8 @@
               <div>
                 <a class="navbar-brand" href="#">
                   <img
-                    src="img/avatar_1.jpg"
-                    alt="Bootstrap"
+                    :src="'.img/avatar'+ contacts[activeContact].avatar +'.jpg'"
+                    alt=""
                     width="30"
                     height="24"
                   />
@@ -187,7 +190,7 @@
         <div class="messagespace conteiner gap-3">
           <div class="d-flex justify-content-end flex-column">
             <div
-              v-for="message in contacts[0].messages"
+              v-for="message in contacts[activeContact].messages"
               :class="(message.status == 'sent')? 'messagesend':'messagerecived' "
             >
               {{ message.message }}
@@ -210,7 +213,6 @@
             class="input-group mb-3 d-flex align-items-center justify-content-center mt-3"
           >
             <input
-              v-model="newmess"
               @keyUp.enter="addMess()"
               v-model="newmess.mess"
               type="text"

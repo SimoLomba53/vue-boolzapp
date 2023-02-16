@@ -167,26 +167,18 @@ createApp({
         },
       ],
       activeContact: 0,
-      newmess: "",
+      newmess: {
+        mess: "",
+        status: "sent",
+      },
     };
   },
 
   methods: {
-    switchContact(contactIndex) {
-      activeContact = [contactIndex];
-      const contactmessage = [];
-      console.log(contactmessage);
-      contactIndex = contactmessage;
+    addMess() {
+      this.contacts[this.activeContact].messages.push({
+        ...this.newmess,
+      });
     },
-
-    //addMess() {
-    //console.log(this.newmess);
-
-    //const newmess = {
-    //title: this.newmess.mess,
-    //};
-
-    //this.texts.push(this.newmess);
-    //},
   },
 }).mount("#app");
