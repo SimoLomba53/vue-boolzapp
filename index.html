@@ -48,7 +48,7 @@
                 <h4>Sofia</h4>
               </div>
             </div>
-            <div>
+            <div class="d-flex gap-2">
               <i class="fa-solid fa-circle-notch"></i>
               <i class="fa-solid fa-message"></i>
               <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -56,12 +56,12 @@
           </div>
         </nav>
         <!--ATTIVA NOTIFICHE DESKTOP-->
-        <div class="conteiner bg-primary">
+        <div class="conteiner notification">
           <h3>Ricevi notifiche di nuovi pessaggi</h3>
           <p>Attiva notifiche desktop</p>
         </div>
         <!--BARRA DI RICERCA CHAT-->
-        <div class="input-group mb-3">
+        <div class="input-group p-2 bg-light">
           <button
             class="btn btn-outline-secondary"
             type="button"
@@ -83,7 +83,7 @@
         <!--UTENTI-->
         <div class="userbar">
           <div
-            class="utente conteiner d-flex flex-row align-items-center"
+            class="utente conteiner d-flex flex-row align-items-center bg-light"
             v-for="(contact, contactIndex) in contacts"
             @click="activeContact=contactIndex"
             :class="contactIndex == activeContact ? 'active': ''"
@@ -169,7 +169,7 @@
       <div class="rightsec col-8">
         <nav class="navbar rightbar bg-light">
           <div class="container d-flex justify-content-between">
-            <div class="d-flex flex-row">
+            <div class="d-flex flex-row align-items-center">
               <div>
                 <a class="navbar-brand" href="#">
                   <img
@@ -180,12 +180,14 @@
                   />
                 </a>
               </div>
-              <div>
+              <div
+                class="rightactname d-flex flex-column justify-content-center"
+              >
                 <h4>{{ contacts[activeContact].name }}</h4>
                 <p>Ultimo accesso</p>
               </div>
             </div>
-            <div>
+            <div class="d-flex gap-2">
               <i class="fa-solid fa-circle-notch"></i>
               <i class="fa-solid fa-message"></i>
               <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -209,7 +211,7 @@
         </div>
 
         <div
-          class="writemessage conteiner d-flex flex-row justify-content-between"
+          class="writemessage conteiner d-flex flex-row justify-content-between bg-light"
         >
           <div class="d-flex align-items-center justify-content-center p-4">
             <i class="fa-regular fa-face-smile"></i>
