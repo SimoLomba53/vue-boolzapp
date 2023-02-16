@@ -180,5 +180,17 @@ createApp({
         ...this.newmess,
       });
     },
+
+    setInterval() {
+      this.contacts[this.activeContact].messages.push(
+        {
+          newmess: {
+            mess: "ok",
+            statuts: "received",
+          },
+        },
+        1000
+      );
+    },
   },
 }).mount("#app");
