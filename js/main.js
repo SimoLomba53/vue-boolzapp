@@ -168,7 +168,7 @@ createApp({
       ],
       activeContact: 0,
       newmess: {
-        mess: "",
+        message: "",
         status: "sent",
       },
     };
@@ -184,10 +184,8 @@ createApp({
     setInterval() {
       this.contacts[this.activeContact].messages.push(
         {
-          newmess: {
-            mess: "ok",
-            statuts: "received",
-          },
+          message: "ok",
+          status: "received",
         },
         1000
       );
